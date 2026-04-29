@@ -63,8 +63,14 @@ const BULAN_NAMES = [
     'Desember',
 ];
 
-const formatRupiah = (val: number) =>
-    new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(val);
+const formatRupiah = (val: number | null | undefined) => {
+    if (val == null || isNaN(Number(val))) return 'Rp 0';
+    return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        maximumFractionDigits: 0,
+    }).format(Number(val));
+};
 
 export default function PenggajianIndex() {
     const { penggajianList, sudahDigenerate, filterBulan, filterTahun, totalGaji, totalLunas, totalBelumLunas } =

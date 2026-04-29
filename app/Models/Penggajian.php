@@ -18,6 +18,13 @@ class Penggajian extends Model
         'tanggal_pembayaran', 'status_pembayaran'
     ];
 
+    protected $casts = [
+    'gaji_pokok'       => 'float',
+    'potongan_cuti'    => 'float',
+    'potongan_lainnya' => 'float',
+    'total_gaji'       => 'float',
+];
+
     public function karyawan()
     {
         return $this->belongsTo(Karyawan::class, 'id_karyawan', 'id_karyawan');

@@ -34,6 +34,7 @@ class PenggajianController extends Controller
                 'gaji_pokok'         => $p->gaji_pokok,
                 'potongan_cuti'      => $p->potongan_cuti,
                 'potongan_lainnya'   => $p->potongan_lainnya,
+                'total_gaji'         => $p->total_gaji,
                 'status_pembayaran'  => $p->status_pembayaran,
                 'tanggal_pembayaran' => $p->tanggal_pembayaran,
             ]);
